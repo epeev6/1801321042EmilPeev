@@ -1,24 +1,35 @@
 package edu.school.virtual.models;
 
-import edu.school.virtual.Parent;
-import edu.school.virtual.Student;
+import edu.school.virtual.Services.ParentGetGradesService;
 
 public class ParentCheckGradesModel {
 	
-	private int parentId;
-	private int studentId;
-	private Parent parent;
-	private Student student;
+	private String parentUsername;
+	private String studentUsername;
+	private Object getGradesMessage;
 	
 	
-	public void setParentId(int parentId) {
-
-		System.out.println("Parent is on the Check grades page.");
-		//this.parent.setParentId(parentId);	
+	
+	public void navigateToMe() {
+		System.out.print("Parent is on homepage. Please enter a student.");
 	}
 	
-	public void setStudentId(int studentId) {
-		// set student id
+	public void setParent(String parentUsername) {
+
+		System.out.println("Parent is on the Check grades page.");
+		this.parentUsername = parentUsername;
+	}
+	
+	public void setStudent(String studentUsername) {
+		this.studentUsername = studentUsername;
+	}
+	
+	public void clickGetGradesButton() {
+		getGradesMessage = ParentGetGradesService.getGrades(parentUsername, studentUsername);
+	}
+	
+	public Object getStudentGradesMessage() {
+		return getGradesMessage;
 	}
 	
 	

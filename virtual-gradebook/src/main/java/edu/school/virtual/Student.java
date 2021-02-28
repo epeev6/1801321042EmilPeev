@@ -5,7 +5,8 @@ import java.util.*;
 public class Student extends User {
 
     
-    public Student() {
+    public Student(String username) {
+    	setUsername(username);
     }
 
     

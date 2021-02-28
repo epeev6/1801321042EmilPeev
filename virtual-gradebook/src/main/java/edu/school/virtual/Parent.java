@@ -5,8 +5,8 @@ import java.util.*;
 public class Parent extends User {
 
     
-    public Parent() {
-    	
+    public Parent(String username) {
+    	setUsername(username);
     }
 
     
